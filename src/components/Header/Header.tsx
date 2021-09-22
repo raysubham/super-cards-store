@@ -11,7 +11,9 @@ export const Header: FunctionComponent = () => {
         <>
           <p>Subham&#39;s Store</p>
           <p className={styles.headerCart}>
-            <FaShoppingBag /> Rs 10000
+            <button className='snipcart-checkout'>
+              <FaShoppingBag /> <span className='snipcart-total-price'>-</span>
+            </button>
           </p>
         </>
       </Container>

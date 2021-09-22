@@ -16,11 +16,18 @@
 }
 
 .headerCart {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: inherit;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
 
-  svg {
-    margin-right: 0.5rem;
+    svg {
+      margin-right: 0.5rem;
+    }
   }
 }
