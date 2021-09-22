@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  background-color: purple;
+  color: white;
+  padding: 0.5rem 0;
+
+  p {
+    margin: 0.3rem;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+}
