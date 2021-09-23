@@ -18,7 +18,7 @@ export const Header: FunctionComponent = () => {
             <p style={{ cursor: 'pointer' }}>Subham&#39;s Store</p>
           </Link>
           <p className={styles.headerCart}>
-            <button>
+            <button className='snipcart-checkout'>
               <FaShoppingBag /> <span>Rs {subtotal}</span>
             </button>
           </p>
