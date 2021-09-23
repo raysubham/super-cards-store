@@ -6,6 +6,7 @@ import { Header } from '../../components/Header'
 import { Container } from '../../components/Container'
 import { Button } from '../../components/Button'
 import styles from './Product.module.scss'
+import { Layout } from '../../components/Layout'
 
 interface productType {
   id: string
@@ -25,49 +26,46 @@ const Product = () => {
   const image = product?.image
 
   return (
-    <div>
-      <Head>
-        <title>{title}</title>
-        <meta name='description' content='Original Cards' />
-      </Head>
-      <Header />
+    <Layout>
+      <>
+        <Head>
+          <title>{title}</title>
+          <meta name='description' content='Original Cards' />
+        </Head>
 
-      <Container>
-        <div className={styles.productWrapper}>
-          <div className={styles.productImage}>
-            {image && (
-              <Image
-                width={864}
-                height={1200}
-                src={image}
-                alt={`Card of ${title}`}
-              />
-            )}
+        <Container>
+          <div className={styles.productWrapper}>
+            <div className={styles.productImage}>
+              {image && (
+                <Image
+                  width={864}
+                  height={1200}
+                  src={image}
+                  alt={`Card of ${title}`}
+                />
+              )}
+            </div>
+            <div className={styles.productContent}>
+              <h1>{title}</h1>
+              <h3 className={styles.productTitle}>{title}</h3>
+              <p className={styles.productPrice}>Rs {price}</p>
+              <p>
+                <Button
+                  className='snipcart-add-item'
+                  data-item-id={id}
+                  data-item-price={price}
+                  data-item-url='/'
+                  data-item-description=''
+                  data-item-image={image}
+                  data-item-name={title}>
+                  Add to cart
+                </Button>
+              </p>
+            </div>
           </div>
-          <div className={styles.productContent}>
-            <h1>{title}</h1>
-            <h3 className={styles.productTitle}>{title}</h3>
-            <p className={styles.productPrice}>Rs {price}</p>
-            <p>
-              <Button
-                className='snipcart-add-item'
-                data-item-id={id}
-                data-item-price={price}
-                data-item-url='/'
-                data-item-description=''
-                data-item-image={image}
-                data-item-name={title}>
-                Add to cart
-              </Button>
-            </p>
-          </div>
-        </div>
-      </Container>
-
-      <footer className={styles.footer}>
-        &copy; My Store, {new Date().getFullYear()}
-      </footer>
-    </div>
+        </Container>
+      </>
+    </Layout>
   )
 }
 

@@ -4,21 +4,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from '../styles/Home.module.scss'
-import { Header } from '../components/Header'
+
 import { Container } from '../components/Container'
 import products from '../data/products.json'
 import { Button } from '../components/Button'
+import { Layout } from '../components/Layout'
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Head>
-        <title>Collectibles Store</title>
-        <meta name='description' content='Find limited edition cards here.' />
-      </Head>
-      <Header />
+    <Layout>
+      <>
+        <Head>
+          <title>Collectibles Store</title>
+          <meta name='description' content='Find limited edition cards here.' />
+        </Head>
 
-      <main>
         <Container>
           <>
             <h1>Collectibles Store</h1>
@@ -59,12 +59,8 @@ const Home: NextPage = () => {
             </ul>
           </>
         </Container>
-      </main>
-
-      <footer className={styles.footer}>
-        &copy; My Store, {new Date().getFullYear()}
-      </footer>
-    </>
+      </>
+    </Layout>
   )
 }
 
