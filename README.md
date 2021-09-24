@@ -1,4 +1,4 @@
-<img height=200px src='https://raw.githubusercontent.com/selfprogrammed/project-images/d36f192c8aaa135f69e70d569d81dca55be03770/nomad-video.webm' alt='website-video' />
+<img src='https://www.subhamray.com/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fcomponents%2Fassets%2Fwwe-super-cards.8480d843025c46aa78e1d9f322e5dda0.jpeg&w=1920&q=75' alt='website-image' />
 
 # WWE Battle Cards Store 🛍️
 
@@ -12,8 +12,8 @@ The website is build using Next.js and Sass. The Payment processing is all handl
 
 ### Installing
 
-- Since the Snipcart is used for payment, you have to get the test API_KEY from it
-- Rename the sample.env file to .env.local
+- Since the Snipcart is used for payment, you have to get the test API_KEY from it.
+- Rename the sample.env file to .env.local and add the test key in it.
 
 ### Dependencies
 
@@ -21,4 +21,6 @@ The website is build using Next.js and Sass. The Payment processing is all handl
 
 ### Running the website locally
 
-- Just run `yarn dev` to start the local development server
+- Just run `yarn dev` to start the local development server.
+
+### That's it. Have fun 😃
