@@ -29,6 +29,8 @@ class MyDocument extends Document {
             id='snipcart'
             data-api-key={`${process.env.NEXT_PUBLIC_SNIPCART_API_KEY}`}
             data-currency='inr'
+            data-config-modal-style='side'
+            data-templates-url='/snipcart-templates.html'
           />
         </body>
       </Html>
