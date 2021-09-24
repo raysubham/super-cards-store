@@ -1,10 +1,11 @@
 import { FunctionComponent } from 'react'
 import Link from 'next/link'
 import { Container } from '../Container'
-import { FaShoppingBag } from 'react-icons/fa'
+import { FaShoppingCart } from 'react-icons/fa'
 
 import styles from './Header.module.scss'
 import { useSnipcart } from '../../hooks/use-snipcart'
+import { Button } from '../Button'
 
 export const Header: FunctionComponent = () => {
   const { cart = {} } = useSnipcart()
@@ -17,10 +18,12 @@ export const Header: FunctionComponent = () => {
           <Link href='/' passHref={true}>
             <h2 className={styles.headerTitle}>WWE Super Cards</h2>
           </Link>
-          <h3 className={styles.headerCart}>
-            <button className='snipcart-checkout'>
-              <FaShoppingBag /> <span>₹ {subtotal}</span>
-            </button>
+          <h3>
+            <Button className='snipcart-checkout' data-color='yellow-header'>
+              <>
+                <FaShoppingCart /> <span>₹ {subtotal}</span>
+              </>
+            </Button>
           </h3>
         </>
       </Container>

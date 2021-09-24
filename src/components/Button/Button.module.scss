@@ -11,9 +11,24 @@
   padding: 0.6rem 1rem;
   cursor: pointer;
 
+  svg {
+    margin-right: 0.5rem;
+    color: $alpha;
+    width: 18px;
+    height: 18px;
+  }
+
   &[data-color='yellow'] {
     color: $alpha;
     background-color: $beta;
+  }
+  &[data-color='yellow-header'] {
+    color: $alpha;
+    background-color: $beta;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &:hover {
@@ -22,6 +37,10 @@
     transition: transform 0.2s;
 
     &[data-color='yellow'] {
+      color: $alpha;
+      background-color: lighten($beta, 10);
+    }
+    &[data-color='yellow-header'] {
       color: $alpha;
       background-color: lighten($beta, 10);
     }
