@@ -21,20 +21,22 @@ const Home: NextPage = () => {
 
         <Container>
           <>
-            <h1>Collectibles Store</h1>
-            <h2>All Available Cards</h2>
+            <h1 className='sr-only'>Collectibles Store</h1>
+            <h2 className='sr-only'>All Available Cards</h2>
             <ul className={styles.products}>
               {products.map((product) => {
                 return (
                   <li key={product.id}>
                     <Link href={`/products/${product.id}`}>
                       <a>
-                        <Image
-                          width={864}
-                          height={1200}
-                          src={product.image}
-                          alt={`Card of ${product.title}`}
-                        />
+                        <div className={styles.productImage}>
+                          <Image
+                            width={864}
+                            height={1200}
+                            src={product.image}
+                            alt={`Card of ${product.title}`}
+                          />
+                        </div>
                         <h3 className={styles.productTitle}>{product.title}</h3>
                         <p className={styles.productPrice}>
                           Rs {product.price}

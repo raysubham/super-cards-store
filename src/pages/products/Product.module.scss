@@ -1,10 +1,26 @@
+@import '../../styles//_utils';
+
 .productWrapper {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .productImage {
-  width: 50%;
+  @extend %card-image;
+  // width: 50%;
+  max-width: 400px;
   margin-right: 2rem;
+  transform: rotate(2deg) scale(0.9) translateY(-1rem);
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: rotate(-3deg) scale(1) translateY(-1rem);
+    transition: transform 0.2s;
+  }
+
+  & > div {
+    display: block !important;
+  }
 }
 
 .productTitle {

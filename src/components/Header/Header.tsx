@@ -15,13 +15,13 @@ export const Header: FunctionComponent = () => {
       <Container className={styles.headerContainer}>
         <>
           <Link href='/' passHref={true}>
-            <p style={{ cursor: 'pointer' }}>Subham&#39;s Store</p>
+            <h2 className={styles.headerTitle}>WWE Collectibles</h2>
           </Link>
-          <p className={styles.headerCart}>
+          <h3 className={styles.headerCart}>
             <button className='snipcart-checkout'>
               <FaShoppingBag /> <span>Rs {subtotal}</span>
             </button>
-          </p>
+          </h3>
         </>
       </Container>
     </header>

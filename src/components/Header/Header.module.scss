@@ -1,18 +1,24 @@
+@import '../../styles/_settings';
+
 .header {
   width: 100%;
-  background-color: purple;
+  background-color: $alpha;
   color: white;
-  padding: 0.5rem 0;
-
-  p {
-    margin: 0.3rem;
-  }
+  padding: 0;
 }
 
 .headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.headerTitle {
+  cursor: pointer;
+  color: $beta;
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+  font-size: 1.7rem;
 }
 
 .headerCart {
@@ -24,10 +30,14 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    font-size: 18px;
     font-weight: bolder;
 
     svg {
       margin-right: 0.5rem;
+      color: $beta;
+      width: 18px;
+      height: 18px;
     }
   }
 }

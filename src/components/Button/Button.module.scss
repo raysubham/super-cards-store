@@ -1,10 +1,25 @@
+@import '../../styles//_settings';
+
 .button {
   font-size: 1rem;
-  background-color: #4faf43;
+  background-color: $gamma;
   color: white;
   text-transform: uppercase;
-  font-weight: bold;
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
   border: 0;
   padding: 0.6rem 1rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: lighten($gamma, 10);
+    transform: translateY(-3px);
+    transition: transform 0.2s;
+  }
+
+   &:active {
+    transform: translateY(3px) scaleY(.8) scaleX(1.2);
+    transition: transform .1s;
+  }
+  
 }
