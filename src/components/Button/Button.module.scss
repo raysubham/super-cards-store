@@ -11,15 +11,24 @@
   padding: 0.6rem 1rem;
   cursor: pointer;
 
+  &[data-color='yellow'] {
+    color: $alpha;
+    background-color: $beta;
+  }
+
   &:hover {
     background-color: lighten($gamma, 10);
     transform: translateY(-3px);
     transition: transform 0.2s;
+
+    &[data-color='yellow'] {
+      color: $alpha;
+      background-color: lighten($beta, 10);
+    }
   }
 
-   &:active {
-    transform: translateY(3px) scaleY(.8) scaleX(1.2);
-    transition: transform .1s;
+  &:active {
+    transform: translateY(3px) scaleY(0.8) scaleX(1.2);
+    transition: transform 0.1s;
   }
-  
 }

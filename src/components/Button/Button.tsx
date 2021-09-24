@@ -4,11 +4,14 @@ import styles from './Button.module.scss'
 interface props {
   children: string
   className?: string
+  color?: string
+  onClick?: () => void
 }
 
 export const Button: FunctionComponent<props> = ({
   children,
   className,
+  color,
   ...rest
 }) => {
   let buttonClassName = styles.button
@@ -18,7 +21,7 @@ export const Button: FunctionComponent<props> = ({
   }
 
   return (
-    <button className={buttonClassName} {...rest}>
+    <button className={buttonClassName} data-color={color} {...rest}>
       {children}
     </button>
   )

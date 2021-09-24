@@ -3,92 +3,107 @@
     "id": "aj-styles",
     "title": "AJ Styles",
     "price": 349,
-    "image": "/images/aj-styles.jpg"
+    "image": "/images/aj-styles.jpg",
+    "team": "raw"
   },
   {
     "id": "finn-balor",
     "title": "Finn Balor",
     "price": 499,
-    "image": "/images/finn-balor.jpg"
+    "image": "/images/finn-balor.jpg",
+    "team": "raw"
   },
   {
     "id": "jinder-mahal",
     "title": "Jinder Mahal",
     "price": 349,
-    "image": "/images/jinder-mahal.jpg"
+    "image": "/images/jinder-mahal.jpg",
+    "team": "smackdown"
   },
   {
     "id": "jimmy-uso",
     "title": "Jimmy Uso",
     "price": 299,
-    "image": "/images/jimmy-uso.jpg"
+    "image": "/images/jimmy-uso.jpg",
+    "team": "smackdown"
   },
   {
     "id": "jey-uso",
     "title": "Jey Uso",
     "price": 299,
-    "image": "/images/jey-uso.jpg"
+    "image": "/images/jey-uso.jpg",
+    "team": "smackdown"
   },
   {
     "id": "the-undertaker",
     "title": "The Undertaker",
     "price": 999,
-    "image": "/images/the-undertaker.jpg"
+    "image": "/images/the-undertaker.jpg",
+    "team": "smackdown"
   },
   {
     "id": "kane",
     "title": "Kane",
     "price": 799,
-    "image": "/images/kane.jpg"
+    "image": "/images/kane.jpg",
+    "team": "raw"
   },
   {
     "id": "stone-cold",
     "title": "Stone Cold",
     "price": 999,
-    "image": "/images/stone-cold.jpg"
+    "image": "/images/stone-cold.jpg",
+    "team": "raw"
   },
 
   {
     "id": "triple-h",
     "title": "Triple H",
     "price": 749,
-    "image": "/images/triple-h.jpg"
+    "image": "/images/triple-h.jpg",
+    "team": "raw"
   },
   {
     "id": "john-cena",
     "title": "John Cena",
     "price": 749,
-    "image": "/images/john-cena.jpg"
+    "image": "/images/john-cena.jpg",
+    "team": "raw"
   },
   {
     "id": "randy-orton",
     "title": "Randy Orton",
     "price": 749,
-    "image": "/images/randy-orton.jpg"
+    "image": "/images/randy-orton.jpg",
+    "team": "raw"
   },
 
   {
     "id": "roman-reigns",
     "title": "Roman Reigns",
     "price": 599,
-    "image": "/images/roman-reigns.jpg"
+    "image": "/images/roman-reigns.jpg",
+    "team": "smackdown"
   },
   {
     "id": "seth-rollins",
     "title": "Seth Rollins",
     "price": 499,
-    "image": "/images/seth-rollins.jpg"
+    "image": "/images/seth-rollins.jpg",
+    "team": "raw"
   },
   {
     "id": "kevin-owens",
     "title": "Kevin Owens",
     "price": 299,
-    "image": "/images/kevin-owens.jpg"
+    "image": "/images/kevin-owens.jpg",
+    "team": "smackdown"
   },
   {
     "id": "kofi-kingston",
     "title": "Kofi Kingston",
     "price": 299,
-    "image": "/images/kofi-kingston.jpg"
+    "image": "/images/kofi-kingston.jpg",
+    "team": "smackdown"
   }
 ]
