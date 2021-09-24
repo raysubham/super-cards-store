@@ -15,11 +15,11 @@ export const Header: FunctionComponent = () => {
       <Container className={styles.headerContainer}>
         <>
           <Link href='/' passHref={true}>
-            <h2 className={styles.headerTitle}>WWE Collectibles</h2>
+            <h2 className={styles.headerTitle}>WWE Super Cards</h2>
           </Link>
           <h3 className={styles.headerCart}>
             <button className='snipcart-checkout'>
-              <FaShoppingBag /> <span>Rs {subtotal}</span>
+              <FaShoppingBag /> <span>₹ {subtotal}</span>
             </button>
           </h3>
         </>

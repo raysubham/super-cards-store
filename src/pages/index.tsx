@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import styles from '../styles/Home.module.scss'
 
@@ -15,34 +14,31 @@ const Home: NextPage = () => {
     <Layout>
       <>
         <Head>
-          <title>Collectibles Store</title>
+          <title>WWE Super Cards</title>
           <meta name='description' content='Find limited edition cards here.' />
         </Head>
 
         <Container>
           <>
-            <h1 className='sr-only'>Collectibles Store</h1>
+            <h1 className='sr-only'>WWE battle Cards</h1>
             <h2 className='sr-only'>All Available Cards</h2>
             <ul className={styles.products}>
               {products.map((product) => {
                 return (
-                  <li key={product.id}>
-                    <Link href={`/products/${product.id}`}>
-                      <a>
-                        <div className={styles.productImage}>
-                          <Image
-                            width={864}
-                            height={1200}
-                            src={product.image}
-                            alt={`Card of ${product.title}`}
-                          />
-                        </div>
-                        <h3 className={styles.productTitle}>{product.title}</h3>
-                        <p className={styles.productPrice}>
-                          Rs {product.price}
-                        </p>
-                      </a>
-                    </Link>
+                  <li key={product.id} className={styles.productWrapper}>
+                    <a>
+                      <div className={styles.productImage}>
+                        <Image
+                          width={864}
+                          height={1200}
+                          src={product.image}
+                          alt={`Card of ${product.title}`}
+                        />
+                      </div>
+                      <h3 className={styles.productTitle}>{product.title}</h3>
+                      <h3 className={styles.productPrice}>₹ {product.price}</h3>
+                    </a>
+
                     <p>
                       <Button
                         className='snipcart-add-item'
@@ -51,7 +47,8 @@ const Home: NextPage = () => {
                         data-item-url='/'
                         data-item-description=''
                         data-item-image={product.image}
-                        data-item-name={product.title}>
+                        data-item-name={product.title}
+                        data-item-max-quantity={1}>
                         Add to cart
                       </Button>
                     </p>
