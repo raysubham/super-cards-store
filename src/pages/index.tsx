@@ -1,19 +1,25 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-
-import { Container } from '../components/Container'
 import products from '../data/products.json'
-import { Button } from '../components/Button'
+import { ChangeEvent, useCallback, useState } from 'react'
+import Fuse from 'fuse.js'
 import { Layout } from '../components/Layout'
-import { useState } from 'react'
-
+import { Container } from '../components/Container'
+import { Button } from '../components/Button'
 import styles from '../styles/Home.module.scss'
 
 const teams = [{ name: 'raw' }, { name: 'smackdown' }]
 
 const Home: NextPage = () => {
   const [activeTeam, setActiveTeam] = useState('')
+  const [query, setQuery] = useState('')
+
+  const inputSearchCallbackRef = useCallback((inputElement) => {
+    if (inputElement) {
+      inputElement.focus()
+    }
+  }, [])
 
   let activeProducts = products
 
@@ -21,6 +27,26 @@ const Home: NextPage = () => {
     activeProducts = activeProducts.filter(
       (product) => product.team === activeTeam
     )
+  }
+
+  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.currentTarget.value
+    setQuery(value)
+  }
+
+  const fuse = new Fuse(activeProducts, {
+    keys: ['title', 'team'],
+  })
+
+  if (query) {
+    const results = fuse.search(query)
+
+    //can be used for simple searches
+    // activeProducts = activeProducts.filter(({ title }) => {
+    //   return title.toLowerCase().includes(query.toLowerCase())
+    // })
+
+    activeProducts = results.map((result) => result.item)
   }
 
   return (
@@ -33,38 +59,50 @@ const Home: NextPage = () => {
 
         <Container>
           <>
-            <h1 className='sr-only'>WWE battle Cards</h1>
+            <h1 className='sr-only'>WWE Super Cards</h1>
 
-            <div className={styles.teams}>
-              <h1>Filter by Teams</h1>
-              <ul>
-                {teams.map((team) => {
-                  const isActive = team.name === activeTeam
-                  let teamClassName
-                  if (isActive) {
-                    teamClassName = styles.teamIsActive
-                  }
+            <div className={styles.discover}>
+              <div className={styles.teams}>
+                <h1>Filter by Team</h1>
+                <ul>
+                  {teams.map((team) => {
+                    const isActive = team.name === activeTeam
+                    let teamClassName
+                    if (isActive) {
+                      teamClassName = styles.teamIsActive
+                    }
 
-                  return (
-                    <li key={team.name}>
-                      <Button
-                        className={teamClassName}
-                        color='yellow'
-                        onClick={() => setActiveTeam(team.name)}>
-                        {team.name}
-                      </Button>
-                    </li>
-                  )
-                })}
-                <li>
-                  <Button
-                    className={!activeTeam ? styles.teamIsActive : ''}
-                    color='yellow'
-                    onClick={() => setActiveTeam('')}>
-                    View All
-                  </Button>
-                </li>
-              </ul>
+                    return (
+                      <li key={team.name}>
+                        <Button
+                          className={teamClassName}
+                          color='yellow'
+                          onClick={() => setActiveTeam(team.name)}>
+                          {team.name}
+                        </Button>
+                      </li>
+                    )
+                  })}
+                  <li>
+                    <Button
+                      className={!activeTeam ? styles.teamIsActive : ''}
+                      color='yellow'
+                      onClick={() => setActiveTeam('')}>
+                      View All
+                    </Button>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.search}>
+                <form>
+                  <h1>Search</h1>
+                  <input
+                    onChange={handleSearch}
+                    type='search'
+                    ref={inputSearchCallbackRef}
+                  />
+                </form>
+              </div>
             </div>
 
             <h2 className='sr-only'>All Available Cards</h2>

@@ -1,8 +1,8 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactElement } from 'react'
 import styles from './Button.module.scss'
 
 interface props {
-  children: string
+  children: string | ReactElement
   className?: string
   color?: string
   onClick?: () => void

@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 3rem;
 }
 
@@ -48,7 +48,11 @@
     display: block !important;
   }
 }
-.teams {
+
+.discover {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: -1rem;
   margin-bottom: 3.5rem;
 
@@ -56,8 +60,10 @@
     font-size: 1.4rem;
     margin-top: 0;
     margin-bottom: 0.7rem;
-    }
+  }
+}
 
+.teams {
   ul {
     display: flex;
     align-items: center;
@@ -78,6 +84,20 @@
   }
 }
 
+.search {
+  input {
+    padding: 0.5rem 0.6rem;
+    border: solid 5px $alpha;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+      border: solid 5px $gamma;
+      box-shadow: 0 0 5px lighten($gamma, 10);
+    }
+  }
+}
+
 .teamIsActive {
-  border: solid 4px $alpha;
+  border: solid 5px $alpha;
 }
